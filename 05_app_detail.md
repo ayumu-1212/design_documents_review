@@ -2,13 +2,24 @@
 ## 全体
 - 管理者のみがみる画面のURLがadminになっていない
 - 商品に関するテーブルがない
-- 会員登録処理や登録ページへ遷移するdeviseコントローラーがない
+- deviseコントローラーの記載がない
+- トップページがない
+- アーティスト、ジャンル、レーベルについてのCRUDがない
+
+## users
+- 論理削除を行うため、users#destroyは不要。
+- ユーザー退会に関するアクションが明記されていない
+
+## cds
+-  論理削除を行うため、users#destroyは不要。
 
 ## orders
 - newのurlが/ordersになっている
 
 ## order_details
 - 購入履歴画面がない
+- order_detailsは一回の注文に含まれる注文商品を参照するものであるので、orders#showが同じ役割を果たすため、不要
+- order#createで注文商品の保存を行うのでorder_details#createは不要。
 
 ## admin
 - editのURLが/admins/idになっている
